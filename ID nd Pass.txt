@@ -1,0 +1,12 @@
+ID : rajdeep@1709
+Pass : ranarajdeep
+
+Github Pass: rajdeeprana2
+
+
+Application Name for All Auth: Web Chat Login
+
+
+https://us04web.zoom.us/j/8415107342?pwd=V2tFd1FzOFpiWm82dVYwU0luUkpJUT09
+
+docker run -p 6379:6379 -d redis:5

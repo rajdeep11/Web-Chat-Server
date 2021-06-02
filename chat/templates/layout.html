@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{title}}</title>
+    <style>
+      body{
+        height: min-content;
+        background-image: url('https://previews.123rf.com/images/dianacreativa/dianacreativa1606/dianacreativa160600043/60397514-chat-background.jpg');
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    {% block css %}
+    {% endblock css %}
+          
+  </head>
+  <body >
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+          <div class="navbar-header" >            
+            <a class="navbar-brand"  href="">
+              <strong>Online Web Chat</strong>
+            </a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/chat">Chat Room</a></li>
+            <li><a class="btn" href="{% url 'logout' %}" role="button">Logout</a>
+            {% else %}
+            <li><a href="/register">Register</a></li>
+            <li><a class="btn" href="/login" role="button">Login</a>
+            {% endif %}
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+          <script>
+            alert("{{message }}");
+          </script>
+          {% endfor %}
+        </ul>
+        {% endif %}
+    <div class="container ">
+      <br>
+      {% block body %}{% endblock body %}
+      </div>
+      {% block js %}{% endblock js %}
+  </body>
+</html>

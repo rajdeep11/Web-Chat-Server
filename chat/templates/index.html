@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+<!-- {% load socialaccount %} -->
+<!-- {% load static %} -->
+ 
+ {% block body %}
+    
+    <h1 class="text-center font-italic">Multi-Authentication based Web Chat Server</h1>
+    <div >
+      {% if user.is_authenticated %}
+      <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+      {% else %}
+      <p>Welcome, new user. Please log in.</p>
+      {% endif %}
+    </div>
+ {% endblock body %}
+ {% block extra_js %}{% endblock extra_js %}
